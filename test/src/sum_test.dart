@@ -31,5 +31,20 @@ void main() {
       expect(() => sut([]), throwsException);
     });
   });
-  
+
+  group('subtration tests', () {
+    test('Should return the correct number of subtraction', () {
+      final sut = MathUtils.subtract([2, 2]);
+      expect(sut, 0);
+    });
+    test('Should return the correct number of subtraction with doubles', () {
+      final sut = MathUtils.subtract([2.5, 2.5]);
+      expect(sut, 0);
+    });
+    test('Should thow an exception', () {
+      const sut = MathUtils.subtract;
+      expect(() => sut([]), throwsException);
+    });
+  });
+ 
 }

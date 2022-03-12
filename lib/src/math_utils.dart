@@ -22,4 +22,15 @@ class MathUtils {
     }
     throw Exception();
   }
+
+  static num subtract (List<num> numbers) {
+    if (numbers.length > 1) {
+      num difference = numbers[0];
+      for (int i = 1; i < numbers.length; i++) {
+        difference -= numbers[i];
+      }
+      return difference;
+    }
+    throw Exception();
+  }
 }
