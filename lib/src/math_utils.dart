@@ -2,7 +2,7 @@ class MathUtils {
   MathUtils._();
 
   static num sum(List<num> numbers) {
-    if (numbers.isNotEmpty) {
+    if (numbers.isNotEmpty || numbers.length > 1) {
       num sum = 0;
       for (num number in numbers) {
         sum += number;
@@ -13,7 +13,7 @@ class MathUtils {
   }
 
   static num multiply (List<num> numbers) {
-    if (numbers.isNotEmpty) {
+    if (numbers.isNotEmpty || numbers.length > 1) {
       num product = 1;
       for (num number in numbers) {
         product *= number;
@@ -24,7 +24,7 @@ class MathUtils {
   }
 
   static num subtract (List<num> numbers) {
-    if (numbers.length > 1) {
+    if (numbers.isNotEmpty || numbers.length > 1) {
       num difference = numbers[0];
       for (int i = 1; i < numbers.length; i++) {
         difference -= numbers[i];
