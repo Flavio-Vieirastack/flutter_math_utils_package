@@ -14,33 +14,33 @@ class MathUtils {
 
   static num multiply(List<num> numbers) {
     if (numbers.isNotEmpty || numbers.length > 1) {
-      num product = 1;
+      num multiple = 1;
       for (num number in numbers) {
-        product *= number;
+        multiple *= number;
       }
-      return product;
+      return multiple;
     }
     throw Exception();
   }
 
   static num subtract(List<num> numbers) {
     if (numbers.isNotEmpty || numbers.length > 1) {
-      num difference = numbers[0];
+      num subtract = numbers[0];
       for (int i = 1; i < numbers.length; i++) {
-        difference -= numbers[i];
+        subtract -= numbers[i];
       }
-      return difference;
+      return subtract;
     }
     throw Exception();
   }
 
   static num divide(List<num> numbers) {
     if (numbers.isNotEmpty || numbers.length > 1) {
-      num quotient = numbers[0];
+      num divide = numbers[0];
       for (int i = 1; i < numbers.length; i++) {
-        quotient /= numbers[i];
+        divide /= numbers[i];
       }
-      return quotient;
+      return divide;
     }
     throw Exception();
   }
@@ -49,5 +49,9 @@ class MathUtils {
     fromDate = DateTime(fromDate.year, fromDate.month, fromDate.day);
     toDate = DateTime(toDate.year, toDate.month, toDate.day);
     return (toDate.difference(fromDate).inHours / 24).round();
+  }
+
+  static int monthBetween(DateTime initialDate, DateTime endDate){
+    return (endDate.year-initialDate.year)*12+(endDate.month-initialDate.month)+1;
   }
 }
