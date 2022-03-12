@@ -61,5 +61,13 @@ void main() {
       expect(() => sut([]), throwsException);
     });
   });
- 
+
+  group('Date tests', () {
+    test('should return the correct date', (){
+      DateTime date1 = DateTime.parse("2020-01-09 23:00:00.299871");
+      DateTime date2 = DateTime.parse("2020-01-10 00:00:00.299871");
+      final sut = MathUtils.daysBetween(date1, date2);
+      expect(sut, 1);
+    });
+  });
 }

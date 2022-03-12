@@ -12,7 +12,7 @@ class MathUtils {
     throw Exception();
   }
 
-  static num multiply (List<num> numbers) {
+  static num multiply(List<num> numbers) {
     if (numbers.isNotEmpty || numbers.length > 1) {
       num product = 1;
       for (num number in numbers) {
@@ -23,7 +23,7 @@ class MathUtils {
     throw Exception();
   }
 
-  static num subtract (List<num> numbers) {
+  static num subtract(List<num> numbers) {
     if (numbers.isNotEmpty || numbers.length > 1) {
       num difference = numbers[0];
       for (int i = 1; i < numbers.length; i++) {
@@ -34,7 +34,7 @@ class MathUtils {
     throw Exception();
   }
 
-  static num divide (List<num> numbers) {
+  static num divide(List<num> numbers) {
     if (numbers.isNotEmpty || numbers.length > 1) {
       num quotient = numbers[0];
       for (int i = 1; i < numbers.length; i++) {
@@ -43,5 +43,11 @@ class MathUtils {
       return quotient;
     }
     throw Exception();
+  }
+
+  static int daysBetween(DateTime fromDate, DateTime toDate) {
+    fromDate = DateTime(fromDate.year, fromDate.month, fromDate.day);
+    toDate = DateTime(toDate.year, toDate.month, toDate.day);
+    return (toDate.difference(fromDate).inHours / 24).round();
   }
 }
