@@ -46,5 +46,20 @@ void main() {
       expect(() => sut([]), throwsException);
     });
   });
+
+  group('divide tests', () {
+    test('Should return the correct number of division', () {
+      final sut = MathUtils.divide([2, 2]);
+      expect(sut, 1);
+    });
+    test('Should return the correct number of division with doubles', () {
+      final sut = MathUtils.divide([2.5, 2.5]);
+      expect(sut, 1);
+    });
+    test('Should thow an exception', () {
+      const sut = MathUtils.divide;
+      expect(() => sut([]), throwsException);
+    });
+  });
  
 }

@@ -33,4 +33,15 @@ class MathUtils {
     }
     throw Exception();
   }
+
+  static num divide (List<num> numbers) {
+    if (numbers.isNotEmpty || numbers.length > 1) {
+      num quotient = numbers[0];
+      for (int i = 1; i < numbers.length; i++) {
+        quotient /= numbers[i];
+      }
+      return quotient;
+    }
+    throw Exception();
+  }
 }
