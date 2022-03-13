@@ -89,4 +89,8 @@ class MathUtils {
     return (endDate.year - initialDate.year) * 12 +
         (endDate.month - initialDate.month);
   }
+
+  static double percentOf ({required num percent, required num of}){
+    return (percent / 100) * of;
+  }
 }

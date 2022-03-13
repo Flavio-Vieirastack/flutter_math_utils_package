@@ -115,4 +115,11 @@ void main() {
       expect(sut, 11);
     });
   });
+
+  group('percent test', () {
+    test('should return the correct percentage of a number', () {
+      final sut = MathUtils.percentOf(percent: 10, of: 100);
+      expect(sut, 10);
+    });
+  });
 }
