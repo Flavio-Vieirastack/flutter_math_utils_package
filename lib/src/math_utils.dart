@@ -20,11 +20,19 @@ class MathUtils {
     throw Exception();
   }
 
-  static num multiply(List<num> numbers) {
+  static num multiply(List<num> numbers, {bool? roundUp, bool? roundDown}) {
+    final ceil = roundUp ?? false;
+    final floor = roundDown ?? false;
     if (numbers.isNotEmpty || numbers.length > 1) {
       num multiple = 1;
       for (num number in numbers) {
         multiple *= number;
+      }
+      if (ceil) {
+        return multiple.ceil();
+      }
+      if (floor) {
+        return multiple.floor();
       }
       return multiple;
     }

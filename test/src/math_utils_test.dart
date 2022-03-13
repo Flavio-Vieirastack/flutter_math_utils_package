@@ -30,6 +30,14 @@ void main() {
       final sut = MathUtils.multiply([2, 2]);
       expect(sut, 4);
     });
+    test('Should return the correct number of multiply rounded to up', () {
+      final sut = MathUtils.multiply([2, 2.25], roundUp: true);
+      expect(sut, 5);
+    });
+    test('Should return the correct number of multiply rounded to down', () {
+      final sut = MathUtils.multiply([2, 2.25], roundDown: true);
+      expect(sut, 4);
+    });
     test('Should return the correct number of multiply with doubles', () {
       final sut = MathUtils.multiply([2.5, 2.5]);
       expect(sut, 6.25);
