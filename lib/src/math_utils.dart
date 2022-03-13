@@ -5,6 +5,9 @@ class MathUtils {
   static num sum(List<num> numbers, {bool? roundUp, bool? roundDown}) {
     final ceil = roundUp ?? false;
     final floor = roundDown ?? false;
+    if (ceil && floor) {
+      throw ArgumentError('Cannot have both roundUp and roundDown set to true');
+    }
     if (numbers.isNotEmpty || numbers.length > 1) {
       num sum = 0;
       for (num number in numbers) {
@@ -24,6 +27,9 @@ class MathUtils {
   static num multiply(List<num> numbers, {bool? roundUp, bool? roundDown}) {
     final ceil = roundUp ?? false;
     final floor = roundDown ?? false;
+    if (ceil && floor) {
+      throw ArgumentError('Cannot have both roundUp and roundDown set to true');
+    }
     if (numbers.isNotEmpty || numbers.length > 1) {
       num multiple = 1;
       for (num number in numbers) {
@@ -43,6 +49,9 @@ class MathUtils {
   static num subtract(List<num> numbers, {bool? roundUp, bool? roundDown}) {
     final ceil = roundUp ?? false;
     final floor = roundDown ?? false;
+    if (ceil && floor) {
+      throw ArgumentError('Cannot have both roundUp and roundDown set to true');
+    }
     if (numbers.isNotEmpty || numbers.length > 1) {
       num subtract = numbers[0];
       for (int i = 1; i < numbers.length; i++) {
@@ -62,6 +71,9 @@ class MathUtils {
   static num divide(List<num> numbers, {bool? roundUp, bool? roundDown}) {
     final ceil = roundUp ?? false;
     final floor = roundDown ?? false;
+    if (ceil && floor) {
+      throw ArgumentError('Cannot have both roundUp and roundDown set to true');
+    }
     if (numbers.isNotEmpty || numbers.length > 1) {
       num divide = numbers[0];
       for (int i = 1; i < numbers.length; i++) {

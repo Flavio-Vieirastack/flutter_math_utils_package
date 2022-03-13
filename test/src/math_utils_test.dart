@@ -23,6 +23,11 @@ void main() {
       const sut = MathUtils.sum;
       expect(() => sut([]), throwsException);
     });
+    test('Should thow an exception with round and ceil true', () {
+      const sut = MathUtils.sum;
+      expect(() => sut([2, 2], roundDown: true, roundUp: true),
+          throwsA(isA<ArgumentError>()));
+    });
   });
 
   group('multiply tests', () {
@@ -45,6 +50,12 @@ void main() {
     test('Should thow an exception', () {
       const sut = MathUtils.multiply;
       expect(() => sut([]), throwsException);
+    });
+
+    test('Should thow an exception with round and ceil true', () {
+      const sut = MathUtils.multiply;
+      expect(() => sut([2, 2], roundDown: true, roundUp: true),
+          throwsA(isA<ArgumentError>()));
     });
   });
 
@@ -69,6 +80,11 @@ void main() {
       const sut = MathUtils.subtract;
       expect(() => sut([]), throwsException);
     });
+    test('Should thow an exception with round and ceil true', () {
+      const sut = MathUtils.subtract;
+      expect(() => sut([2, 2], roundDown: true, roundUp: true),
+          throwsA(isA<ArgumentError>()));
+    });
   });
 
   group('divide tests', () {
@@ -92,6 +108,11 @@ void main() {
       const sut = MathUtils.divide;
       expect(() => sut([]), throwsException);
     });
+    test('Should thow an exception with round and ceil true', () {
+      const sut = MathUtils.divide;
+      expect(() => sut([2, 2], roundDown: true, roundUp: true),
+          throwsA(isA<ArgumentError>()));
+    });
   });
 
   group('Date tests', () {
@@ -108,7 +129,7 @@ void main() {
       final sut = MathUtils.monthsBetween(initialDate: date1, endDate: date2);
       expect(sut, 1);
     });
-    test('should return the correct date in moths', () {
+    test('should return the correct date in moths second test', () {
       DateTime date1 = DateTime.parse("2020-01-09 23:00:00.299871");
       DateTime date2 = DateTime.parse("2020-12-10 00:00:00.299871");
       final sut = MathUtils.monthsBetween(initialDate: date1, endDate: date2);
@@ -127,6 +148,10 @@ void main() {
     test('should return the correct factorial of a number', () {
       final sut = MathUtils.factorialOf(number: 5);
       expect(sut, 120);
+    });
+    test('should return the correct factorial of a another number', () {
+      final sut = MathUtils.factorialOf(number: 7);
+      expect(sut, 5040);
     });
   });
 
