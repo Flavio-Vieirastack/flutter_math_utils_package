@@ -53,6 +53,14 @@ void main() {
       final sut = MathUtils.subtract([2, 2]);
       expect(sut, 0);
     });
+    test('Should return the correct number of subtraction rounded to up', () {
+      final sut = MathUtils.subtract([4.25, 2], roundUp: true);
+      expect(sut, 3);
+    });
+    test('Should return the correct number of subtraction rounded to down', () {
+      final sut = MathUtils.subtract([4.25, 2], roundDown: true);
+      expect(sut, 2);
+    });
     test('Should return the correct number of subtraction with doubles', () {
       final sut = MathUtils.subtract([2.5, 2.5]);
       expect(sut, 0);

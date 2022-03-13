@@ -39,11 +39,19 @@ class MathUtils {
     throw Exception();
   }
 
-  static num subtract(List<num> numbers) {
+  static num subtract(List<num> numbers, {bool? roundUp, bool? roundDown}) {
+    final ceil = roundUp ?? false;
+    final floor = roundDown ?? false;
     if (numbers.isNotEmpty || numbers.length > 1) {
       num subtract = numbers[0];
       for (int i = 1; i < numbers.length; i++) {
         subtract -= numbers[i];
+      }
+      if (ceil) {
+        return subtract.ceil();
+      }
+      if (floor) {
+        return subtract.floor();
       }
       return subtract;
     }
