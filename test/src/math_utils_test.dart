@@ -80,6 +80,14 @@ void main() {
       final sut = MathUtils.divide([2.5, 2.5]);
       expect(sut, 1);
     });
+    test('Should return the correct number of division rounded to up', () {
+      final sut = MathUtils.divide([4.25, 2], roundUp: true);
+      expect(sut, 3);
+    });
+    test('Should return the correct number of division rounded to down', () {
+      final sut = MathUtils.divide([4.25, 2], roundDown: true);
+      expect(sut, 2);
+    });
     test('Should thow an exception', () {
       const sut = MathUtils.divide;
       expect(() => sut([]), throwsException);
@@ -87,11 +95,24 @@ void main() {
   });
 
   group('Date tests', () {
-    test('should return the correct date', (){
+    test('should return the correct date in days', () {
       DateTime date1 = DateTime.parse("2020-01-09 23:00:00.299871");
       DateTime date2 = DateTime.parse("2020-01-10 00:00:00.299871");
-      final sut = MathUtils.daysBetween(fromDate: date1, toDate:  date2);
+      final sut = MathUtils.daysBetween(fromDate: date1, toDate: date2);
       expect(sut, 1);
+    });
+
+    test('should return the correct date in moths', () {
+      DateTime date1 = DateTime.parse("2020-01-09 23:00:00.299871");
+      DateTime date2 = DateTime.parse("2020-02-10 00:00:00.299871");
+      final sut = MathUtils.monthsBetween(initialDate: date1, endDate: date2);
+      expect(sut, 1);
+    });
+    test('should return the correct date in moths', () {
+      DateTime date1 = DateTime.parse("2020-01-09 23:00:00.299871");
+      DateTime date2 = DateTime.parse("2020-12-10 00:00:00.299871");
+      final sut = MathUtils.monthsBetween(initialDate: date1, endDate: date2);
+      expect(sut, 11);
     });
   });
 }

@@ -58,11 +58,19 @@ class MathUtils {
     throw Exception();
   }
 
-  static num divide(List<num> numbers) {
+  static num divide(List<num> numbers, {bool? roundUp, bool? roundDown}) {
+    final ceil = roundUp ?? false;
+    final floor = roundDown ?? false;
     if (numbers.isNotEmpty || numbers.length > 1) {
       num divide = numbers[0];
       for (int i = 1; i < numbers.length; i++) {
         divide /= numbers[i];
+      }
+      if (ceil) {
+        return divide.ceil();
+      }
+      if (floor) {
+        return divide.floor();
       }
       return divide;
     }
@@ -76,10 +84,9 @@ class MathUtils {
     return (toDate.difference(fromDate).inHours / 24).round();
   }
 
-  static int monthBetween(
+  static int monthsBetween(
       {required DateTime initialDate, required DateTime endDate}) {
     return (endDate.year - initialDate.year) * 12 +
-        (endDate.month - initialDate.month) +
-        1;
+        (endDate.month - initialDate.month);
   }
 }
