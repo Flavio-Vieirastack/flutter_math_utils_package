@@ -7,6 +7,14 @@ void main() {
       final sut = MathUtils.sum([2, 2]);
       expect(sut, 4);
     });
+    test('Should return the correct number of sum rounded to up', () {
+      final sut = MathUtils.sum([2, 2.5], roundUp: true);
+      expect(sut, 5);
+    });
+    test('Should return the correct number of sum rounded to down', () {
+      final sut = MathUtils.sum([2, 2.5], roundDown: true);
+      expect(sut, 4);
+    });
     test('Should return the correct number of sum with doubles', () {
       final sut = MathUtils.sum([2.5, 2.5]);
       expect(sut, 5);
@@ -66,7 +74,7 @@ void main() {
     test('should return the correct date', (){
       DateTime date1 = DateTime.parse("2020-01-09 23:00:00.299871");
       DateTime date2 = DateTime.parse("2020-01-10 00:00:00.299871");
-      final sut = MathUtils.daysBetween(date1, date2);
+      final sut = MathUtils.daysBetween(fromDate: date1, toDate:  date2);
       expect(sut, 1);
     });
   });

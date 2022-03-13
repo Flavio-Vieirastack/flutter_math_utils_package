@@ -1,11 +1,19 @@
 class MathUtils {
   MathUtils._();
 
-  static num sum(List<num> numbers) {
+  static num sum(List<num> numbers, {bool? roundUp, bool? roundDown}) {
+    final ceil = roundUp ?? false;
+    final floor = roundDown ?? false;
     if (numbers.isNotEmpty || numbers.length > 1) {
       num sum = 0;
       for (num number in numbers) {
         sum += number;
+      }
+      if (ceil) {
+        return sum.ceil();
+      }
+      if (floor) {
+        return sum.floor();
       }
       return sum;
     }
@@ -45,13 +53,17 @@ class MathUtils {
     throw Exception();
   }
 
-  static int daysBetween(DateTime fromDate, DateTime toDate) {
+  static int daysBetween(
+      {required DateTime fromDate, required DateTime toDate}) {
     fromDate = DateTime(fromDate.year, fromDate.month, fromDate.day);
     toDate = DateTime(toDate.year, toDate.month, toDate.day);
     return (toDate.difference(fromDate).inHours / 24).round();
   }
 
-  static int monthBetween(DateTime initialDate, DateTime endDate){
-    return (endDate.year-initialDate.year)*12+(endDate.month-initialDate.month)+1;
+  static int monthBetween(
+      {required DateTime initialDate, required DateTime endDate}) {
+    return (endDate.year - initialDate.year) * 12 +
+        (endDate.month - initialDate.month) +
+        1;
   }
 }
