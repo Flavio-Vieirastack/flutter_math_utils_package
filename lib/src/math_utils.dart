@@ -1,3 +1,4 @@
+
 class MathUtils {
   MathUtils._();
 
@@ -101,4 +102,10 @@ class MathUtils {
     }
     return factorial;
   }
+
+  static num simpleRuleOfThree(
+      {required num number1, required num number2, required num inverselyProportionalNumber}) {
+    return (number1 * number2) / inverselyProportionalNumber;
+  }
+  
 }

@@ -125,9 +125,21 @@ void main() {
 
   group('factorial test', () {
     test('should return the correct factorial of a number', () {
-      final sut = MathUtils.factorialOf(number:  5);
+      final sut = MathUtils.factorialOf(number: 5);
       expect(sut, 120);
     });
   });
-  
+
+  group('Rule of three test', () {
+    test('should return the correct rule of three of a number', () {
+      final sut = MathUtils.simpleRuleOfThree(
+          number1: 6, number2: 25, inverselyProportionalNumber: 1);
+      expect(sut, 150);
+    });
+    test('should return the correct rule of three of another number', () {
+      final sut = MathUtils.simpleRuleOfThree(
+          number1: 6, number2: 24, inverselyProportionalNumber: 8);
+      expect(sut, 18);
+    });
+  });
 }
