@@ -8,38 +8,63 @@ This package will help you implement calcs in your project, such as: Sums, divis
 
 first of all import the package
 
-`import 'src/math_utils.dart';`
-
+```
+import 'src/math_utils.dart';
+```
 ## Usage
 
 **if you want to do calculations of several numbers at once, just pass your list of numbers like this:**
 
-`final myResult = MathUtils.sum([2, 2]);`
+```
+final myResult = MathUtils.sum([2, 2]);
 
-`final myResult = MathUtils.multiply([2, 2]);`
+```
+```
+final myResult = MathUtils.multiply([2, 2]);
 
-`final myResult = MathUtils.subtract([2, 2]);`
+```
+```
+final myResult = MathUtils.subtract([2, 2]);
 
-`final myResult = MathUtils.divide([2, 2]);`
+```
+```
+final myResult = MathUtils.divide([2, 2]);
 
+```
 **Was your result too big? Do you want to round it, is simple**
 
-`final myResult = MathUtils.sum([2, 2.5], roundUp: true);`
+```
+final myResult = MathUtils.sum([2, 2.5], roundUp: true);
 
-`final myResult = MathUtils.sum([2, 2.5], roundDown: true);`
+```
+```
+final myResult = MathUtils.sum([2, 2.5], roundDown: true);
 
-`final myResult = MathUtils.multiply([2, 2.25], roundUp: true);`
+```
+```
+final myResult = MathUtils.multiply([2, 2.25], roundUp: true);
 
-`final myResult = MathUtils.multiply([2, 2.25], roundDown: true);`
+```
+```
+final myResult = MathUtils.multiply([2, 2.25], roundDown: true);
 
-`final myResult = MathUtils.subtract([4.25, 2], roundUp: true);`
+```
+```
+final myResult = MathUtils.subtract([4.25, 2], roundUp: true);
 
-`final myResult = MathUtils.subtract([4.25, 2], roundDown: true);`
+```
+```
+final myResult = MathUtils.subtract([4.25, 2], roundDown: true);
 
-`final myResult = MathUtils.divide([4.25, 2], roundUp: true);`
+```
+```
+final myResult = MathUtils.divide([4.25, 2], roundUp: true);
 
-`final myResult = MathUtils.divide([4.25, 2], roundDown: true);`
+```
+```
+final myResult = MathUtils.divide([4.25, 2], roundDown: true);
 
+```
 **Do you want to know the difference between two dates in days?**
 
 ```
@@ -59,13 +84,17 @@ first of all import the package
 
 **But what about the percentage? I want to know what is X% of a number X, simple**
 
-`final myResult = MathUtils.percentOf(percent: 10, of: 100);`
+```
+final myResult = MathUtils.percentOf(percent: 10, of: 100);
 
+```
 **For my project I need to know what the factorial of a number x**
 
 
-`final myResult = MathUtils.factorialOf(number: 5);`
+```
+final myResult = MathUtils.factorialOf(number: 5);
 
+```
 **And the rule of three?**
 
 My company spends 6 pieces of plastic to produce one fan. How many parts are needed to produce 25 fans?
