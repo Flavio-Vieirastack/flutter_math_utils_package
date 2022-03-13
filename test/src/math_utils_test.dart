@@ -122,4 +122,12 @@ void main() {
       expect(sut, 10);
     });
   });
+
+  group('factorial test', () {
+    test('should return the correct factorial of a number', () {
+      final sut = MathUtils.factorialOf(number:  5);
+      expect(sut, 120);
+    });
+  });
+  
 }

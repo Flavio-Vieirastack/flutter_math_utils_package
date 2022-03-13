@@ -90,7 +90,15 @@ class MathUtils {
         (endDate.month - initialDate.month);
   }
 
-  static double percentOf ({required num percent, required num of}){
+  static num percentOf({required num percent, required num of}) {
     return (percent / 100) * of;
+  }
+
+  static num factorialOf({required num number}) {
+    num factorial = 1;
+    for (var i = number; i >= 1; i--) {
+      factorial *= i;
+    }
+    return factorial;
   }
 }
