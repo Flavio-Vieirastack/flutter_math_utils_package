@@ -1,6 +1,6 @@
 name: flutter_math_utils
 description: This package will help you implement calcs in your project, such as. Sums, divisions, multiplications, percentages, difference between dates and simple rule of 3.
-version: 0.0.1
+version: 0.0.2
 repository: https://github.com/Flavio-Vieirastack/flutter_math_utils_package
 
 environment:
